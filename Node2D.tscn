@@ -1,18 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Area2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://KinematicBody2D2.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 80.7257, 361.662 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 330.179, 76.1953 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 460.138, 551.965 )
 
-[node name="KinematicBody2D22" parent="." instance=ExtResource( 2 )]
-position = Vector2( 322.242, -296.844 )
-script = ExtResource( 3 )
+[node name="Player2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 454.872, 71.9183 )
+bottom = false
 
 [node name="Area2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 82.8278, -232.132 )
+position = Vector2( 459.593, 313.092 )

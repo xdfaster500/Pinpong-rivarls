@@ -1,28 +1,37 @@
 extends KinematicBody2D
+## Player
+# Se mueve de derecha a izquierda para rebotar la vola
 
 
-var move = Vector2()
-export var a = true
 
+## Variables
+var _move = Vector2()
+
+export var bottom = true
+
+
+
+## Funciones
 func _ready():
 	var screen = get_viewport_rect().size
 	position.x = screen.x/2
-	if a:
+	if bottom:
 		position.y = screen.y -10
 
+
 func _physics_process(delta):
-	if a:
-		if Input.is_key_pressed(KEY_LEFT):
-			move.x = -300
-		elif Input.is_key_pressed(KEY_RIGHT):
-				move.x = 300
+	if bottom:
+		if Input.is_action_pressed("P1_IZQ"):
+			_move.x = -300
+		elif Input.is_action_pressed("P1_DER"):
+				_move.x = 300
 		else:
-			move.x = 0
+			_move.x = 0
 	else:
-		if Input.is_key_pressed(KEY_D):
-			move.x = -300
-		elif Input.is_key_pressed(KEY_A):
-			move.x = 300
+		if Input.is_action_pressed("P2_IZQ"):
+			_move.x = -300
+		elif Input.is_action_pressed("P2_DER"):
+			_move.x = 300
 		else:
-			move.x = 0
-	move_and_slide(move)
+			_move.x = 0
+	move_and_slide(_move)
