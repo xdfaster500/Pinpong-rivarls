@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Sprite.gd" type="Script" id=2]
+[ext_resource path="res://Area2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://KinematicBody2D2.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2( 71.8167, 505.582 )
+position = Vector2( 80.7257, 361.662 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.605698, 45.1794 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 330.179, 76.1953 )
+
+[node name="KinematicBody2D22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 322.242, -296.844 )
+script = ExtResource( 3 )
+
+[node name="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 82.8278, -232.132 )
